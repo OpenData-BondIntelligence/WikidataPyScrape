@@ -5,6 +5,7 @@ import geopy as geo
 from geopy.geocoders import Nominatim
 from StateIDS import STATE_IDS
 from StateStrings import STATE_NAMES
+from Config import GoogleApiKey
 from SPARQLWrapper import SPARQLWrapper, JSON, XML
 
 def main():
@@ -13,7 +14,7 @@ def main():
     #Variable to store the output of the Google maps API query
     reverseGeoCodeOut = None
     #authenticate google API key
-    gmaps = googlemaps.Client(key='AIzaSyDjA5nLQv9wHwC84868FN26y0POzA95HWA')
+    gmaps = googlemaps.Client(key=GoogleApiKey)
     #declare the output CSV file
     filePath = open("pyOutput.csv", "w", encoding='utf-8')
     #declare where SPARQL queries will be fed to
